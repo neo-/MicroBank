@@ -71,6 +71,39 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Cards",
+			"item": [
+				{
+					"name": "Get Card Details",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/myCards",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"myCards"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

@@ -71,6 +71,10 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+
+                    <image>
+                        <name>naveejr/${project.artifactId}</name>
+                    </image>
                 </configuration>
                 <executions>
                     <execution>
