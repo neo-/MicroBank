@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "78d59ab5-18b6-4bf0-9166-bd2faba71fda",
+		"name": "MicroBank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "690924"
+	},
+	"item": [
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "Get Account Details",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/myAccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"myAccount"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
