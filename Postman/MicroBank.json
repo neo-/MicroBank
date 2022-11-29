@@ -38,6 +38,39 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Loans",
+			"item": [
+				{
+					"name": "Get Account Details Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/myLoans",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"myLoans"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
