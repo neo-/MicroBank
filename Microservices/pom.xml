@@ -13,6 +13,7 @@
         <module>loans</module>
         <module>cards</module>
         <module>accounts</module>
+        <module>common</module>
     </modules>
 
     <packaging>pom</packaging>
