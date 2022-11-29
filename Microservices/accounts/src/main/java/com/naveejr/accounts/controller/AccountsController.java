@@ -6,7 +6,6 @@ package com.naveejr.accounts.controller;
 import com.naveejr.accounts.model.Accounts;
 import com.naveejr.accounts.model.Customer;
 import com.naveejr.accounts.repository.AccountsRepository;
-import com.naveejr.common.util.StopWatch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +19,6 @@ public class AccountsController {
 
 	@PostMapping("/myAccount")
 	public Accounts getAccountDetails(@RequestBody Customer customer) {
-		System.out.println(StopWatch.getName());
 		Accounts accounts = accountsRepository.findByCustomerId(customer.getCustomerId());
 		if (accounts != null) {
 			return accounts;
