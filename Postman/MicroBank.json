@@ -35,7 +35,129 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get Account Details",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\":1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/myAccount",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"myAccount"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Nov 2022 19:51:08 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"customerId\": 1,\n    \"accountNumber\": 186576453,\n    \"accountType\": \"Savings\",\n    \"branchAddress\": \"123 Main Street, New York\",\n    \"createDt\": \"2022-12-01\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Account Service properties",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/account/properties",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"account",
+								"properties"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Account Service properties",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/account/properties",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"account",
+										"properties"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Nov 2022 19:39:08 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Welcome to the EazyBank Accounts Prod application\",\n    \"buildVersion\": \"1\",\n    \"mailDetails\": {\n        \"hostName\": \"prod-accounts@eazybytes.com\",\n        \"port\": \"9010\",\n        \"from\": \"prod-accounts@eazybytes.com\",\n        \"subject\": \"Your Account Details from Eazy Bank Production Environment\"\n    },\n    \"activeBranches\": [\n        \"Hyderabad\",\n        \"Paris\",\n        \"NewYork\"\n    ]\n}"
+						}
+					]
 				}
 			]
 		},
@@ -68,7 +190,129 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get Account Details Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\":1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/myLoans",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"myLoans"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Nov 2022 19:51:03 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"loanNumber\": 4,\n        \"customerId\": 1,\n        \"startDt\": \"2022-08-01\",\n        \"loanType\": \"Personal\",\n        \"totalLoan\": 10000,\n        \"amountPaid\": 3500,\n        \"outstandingAmount\": 6500,\n        \"createDt\": \"2022-08-01\"\n    },\n    {\n        \"loanNumber\": 1,\n        \"customerId\": 1,\n        \"startDt\": \"2022-03-26\",\n        \"loanType\": \"Home\",\n        \"totalLoan\": 200000,\n        \"amountPaid\": 50000,\n        \"outstandingAmount\": 150000,\n        \"createDt\": \"2022-03-26\"\n    },\n    {\n        \"loanNumber\": 2,\n        \"customerId\": 1,\n        \"startDt\": \"2021-11-20\",\n        \"loanType\": \"Vehicle\",\n        \"totalLoan\": 40000,\n        \"amountPaid\": 10000,\n        \"outstandingAmount\": 30000,\n        \"createDt\": \"2021-11-20\"\n    },\n    {\n        \"loanNumber\": 3,\n        \"customerId\": 1,\n        \"startDt\": \"2021-05-31\",\n        \"loanType\": \"Home\",\n        \"totalLoan\": 50000,\n        \"amountPaid\": 10000,\n        \"outstandingAmount\": 40000,\n        \"createDt\": \"2021-05-31\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Loans Service properties",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/loans/properties",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"loans",
+								"properties"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Loans Service properties",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/loans/properties",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"loans",
+										"properties"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Nov 2022 19:50:37 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Welcome to the EazyBank Loans Prod application\",\n    \"buildVersion\": \"1\",\n    \"mailDetails\": {\n        \"hostName\": \"prod-loans@eazybytes.com\",\n        \"port\": \"9011\",\n        \"from\": \"prod-loans@eazybytes.com\",\n        \"subject\": \"Your Loan Details from Eazy Bank Production Environment\"\n    },\n    \"activeBranches\": [\n        \"Hyderabad\",\n        \"Paris\",\n        \"NewYork\"\n    ]\n}"
+						}
+					]
 				}
 			]
 		},
@@ -101,7 +345,129 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get Card Details",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\":1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9000/myCards",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"myCards"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Nov 2022 19:50:57 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"cardId\": 1,\n        \"customerId\": 1,\n        \"cardNumber\": \"4565XXXX4656\",\n        \"cardType\": \"Credit\",\n        \"totalLimit\": 10000,\n        \"amountUsed\": 500,\n        \"availableAmount\": 9500,\n        \"createDt\": \"2022-12-01\"\n    },\n    {\n        \"cardId\": 2,\n        \"customerId\": 1,\n        \"cardNumber\": \"3455XXXX8673\",\n        \"cardType\": \"Credit\",\n        \"totalLimit\": 7500,\n        \"amountUsed\": 600,\n        \"availableAmount\": 6900,\n        \"createDt\": \"2022-12-01\"\n    },\n    {\n        \"cardId\": 3,\n        \"customerId\": 1,\n        \"cardNumber\": \"2359XXXX9346\",\n        \"cardType\": \"Credit\",\n        \"totalLimit\": 20000,\n        \"amountUsed\": 4000,\n        \"availableAmount\": 16000,\n        \"createDt\": \"2022-12-01\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Cards Service properties",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/cards/properties",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"cards",
+								"properties"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Cards Service properties",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/cards/properties",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"cards",
+										"properties"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 30 Nov 2022 19:46:21 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Welcome to the EazyBank Cards Prod application\",\n    \"buildVersion\": \"1\",\n    \"mailDetails\": {\n        \"hostName\": \"prod-cards@eazybytes.com\",\n        \"port\": \"9012\",\n        \"from\": \"prod-cards@eazybytes.com\",\n        \"subject\": \"Your Card Details from Eazy Bank Production Environment\"\n    },\n    \"activeBranches\": [\n        \"Hyderabad\",\n        \"Paris\",\n        \"NewYork\"\n    ]\n}"
+						}
+					]
 				}
 			]
 		}
