@@ -3,9 +3,7 @@ package com.naveejr.accounts.model;
 import java.time.LocalDate;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

@@ -8,6 +8,7 @@ import com.naveejr.accounts.model.*;
 import com.naveejr.accounts.repository.AccountsRepository;
 import com.naveejr.accounts.service.client.CardsFeignClient;
 import com.naveejr.accounts.service.client.LoansFeignClient;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,6 +36,7 @@ public class AccountsController {
 	}
 
 	@PostMapping("/myCustomerDetails")
+	@CircuitBreaker(name = "detailsForCustomerSupportApp")
 	public CustomerDetails getCustomerDetails(@RequestBody Customer customer) {
 		Accounts accounts = accountsRepository.findByCustomerId(customer.getCustomerId());
 		List<Loans> loans = loansFeignClient.getLoansDetails(customer);

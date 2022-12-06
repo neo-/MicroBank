@@ -3,7 +3,7 @@ package com.naveejr.loans.model;
 import java.sql.Date;
 
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
