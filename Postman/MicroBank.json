@@ -107,14 +107,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/myAccount",
+							"raw": "http://localhost:8080/myCustomerDetails",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"myAccount"
+								"myCustomerDetails"
 							]
 						}
 					},
@@ -602,6 +602,101 @@
 						}
 					},
 					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gateway",
+			"item": [
+				{
+					"name": "Accounts",
+					"item": [
+						{
+							"name": "Get Account Details",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\":1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8072/microbank/accounts/myAccount",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8072",
+									"path": [
+										"microbank",
+										"accounts",
+										"myAccount"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Account Details",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"customerId\":1\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/myAccount",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"myAccount"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 30 Nov 2022 19:51:08 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"customerId\": 1,\n    \"accountNumber\": 186576453,\n    \"accountType\": \"Savings\",\n    \"branchAddress\": \"123 Main Street, New York\",\n    \"createDt\": \"2022-12-01\"\n}"
+								}
+							]
+						}
+					]
 				}
 			]
 		}
