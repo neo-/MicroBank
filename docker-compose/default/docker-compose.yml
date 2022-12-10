@@ -28,7 +28,7 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: default
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
-     
+      
   accounts:
     image: naveejr/accounts:latest
     mem_limit: 700m
@@ -42,7 +42,7 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
-        delay: 60s
+        delay: 30s
         max_attempts: 3
         window: 120s
     environment:
@@ -63,7 +63,7 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
-        delay: 60s
+        delay: 30s
         max_attempts: 3
         window: 120s
     environment:
@@ -84,14 +84,37 @@ services:
     deploy:
       restart_policy:
         condition: on-failure
-        delay: 60s
+        delay: 30s
         max_attempts: 3
         window: 120s
     environment:
       SPRING_PROFILES_ACTIVE: default
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
-     
+   
+  gatewayserver:
+    image: naveejr/gateway-server:latest
+    mem_limit: 700m
+    ports:
+      - "8072:8072"
+    networks:
+      - microbank-network
+    depends_on:
+      - configserver
+      - eurekaserver
+      - cards
+      - loans
+      - accounts
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 45s
+        max_attempts: 3
+        window: 180s
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
       
 networks:
-  microbank-network:
+  microbank:
