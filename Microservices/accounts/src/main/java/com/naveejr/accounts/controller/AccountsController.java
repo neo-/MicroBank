@@ -10,6 +10,8 @@ import com.naveejr.accounts.service.client.CardsFeignClient;
 import com.naveejr.accounts.service.client.LoansFeignClient;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +24,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 public class AccountsController {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(AccountsController.class);
 
 	private final AccountsServiceConfig accountsServiceConfig;
 	private final AccountsRepository accountsRepository;
@@ -38,6 +42,7 @@ public class AccountsController {
 	@PostMapping("/myCustomerDetails")
 	@CircuitBreaker(name = "detailsForCustomerSupportApp")
 	public CustomerDetails getCustomerDetails(@RequestBody Customer customer) {
+		LOGGER.info("Getting customer details for {}", customer.getCustomerId());
 		Accounts accounts = accountsRepository.findByCustomerId(customer.getCustomerId());
 		List<Loans> loans = loansFeignClient.getLoansDetails(customer);
 		List<Cards> cards = cardsFeignClient.getCardDetails(customer);
@@ -50,6 +55,8 @@ public class AccountsController {
 
 	@GetMapping("account/properties")
 	public ResponseEntity<Properties> getAccountServiceConfig() {
+
+		LOGGER.info("Getting customer details ");
 		return ResponseEntity.ok(
 				new Properties(
 						accountsServiceConfig.getMsg(),
