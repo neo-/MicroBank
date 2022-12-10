@@ -24,7 +24,6 @@
         <module>config-server</module>
         <module>eureka-server</module>
         <module>gateway-server</module>
-        <module>zipkin-server</module>
     </modules>
 
     <packaging>pom</packaging>
