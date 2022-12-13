@@ -15,7 +15,6 @@
     <artifactId>Microbank</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
     <modules>
         <module>loans</module>
         <module>cards</module>
